@@ -1,109 +1,227 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jayesh Torawane's Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(to right, #4CAF50, #2E7D32);
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.1rem;
-    }
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #2E7D32;
-      border-bottom: 2px solid #4CAF50;
-      display: inline-block;
-    }
-    .project {
-      background: #fff;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-left: 4px solid #4CAF50;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s;
-    }
-    .project:hover {
-      transform: translateY(-4px);
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #e0e0e0;
-      margin-top: 2rem;
-    }
-    a {
-      color: #4CAF50;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jayesh Torawane | Portfolio</title>
+
+<style>
+:root {
+  --bg: #f4f7fb;
+  --text: #333;
+  --card: #fff;
+  --accent: #4caf50;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --card: #1e1e1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s;
+}
+
+/* Header */
+header {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: white;
+  color: #2e7d32;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Dark Mode Toggle */
+.toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: var(--card);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Sections */
+section {
+  max-width: 1000px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  animation: fadeUp 1s ease;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+  border-left: 5px solid var(--accent);
+  padding-left: 0.6rem;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.skill {
+  background: var(--card);
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1.2rem;
+}
+
+.project {
+  background: var(--card);
+  padding: 1.2rem;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Contact */
+.contact p {
+  margin-bottom: 0.4rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #ddd;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile First */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>Jayesh Torawane's Portfolio</h1>
-    <p>Python | Java | HTML | CSS | JavaScript | PostgreSQL | SQL</p>
-  </header>
 
-  <section>
-    <h2>Projects</h2>
-    <div class="project">
-      <h3><a href="https://github.com/TorawaneJayesh/my-projects/tree/main/Digital%20toss">Digital Toss</a></h3>
-      <p>A digital tool to simulate coin tosses for decision-making.</p>
-    </div>
-    <div class="project">
-      <h3><a href="https://github.com/TorawaneJayesh/my-projects/tree/main/Lucky%20cards%20game">Digital Water Service</a></h3>
-      <p>Platform for managing and ordering water supply digitally.</p>
-    </div>
-    <div class="project">
-      <h3><a href="https://github.com/TorawaneJayesh/my-projects/tree/main/Number%20guese%20game">To-Do List</a></h3>
-      <p>A simple and user-friendly task management app.</p>
-    </div>
-    <div class="project">
-      <h3><a href="https://github.com/TorawaneJayesh/my-projects/tree/main/To-do%20list">Lucky Cards Game</a></h3>
-      <p>A fun and interactive card game built with python.</p>
-    </div>
-  </section>
+<button class="toggle" onclick="toggleDark()">🌙</button>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: torawanejayesh77@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/TorawaneJayesh">github.com/TorawaneJayesh</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/jayesh-torawane-122612340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">linkedin.com/in/JayeshTorawane</a></p>
-  </section>
+<header>
+  <h1>Jayesh Torawane</h1>
+  <p>MCA Student | Software Developer | Data Science Enthusiast</p>
+  <a class="btn" href="Jayesh_Torawane_resume.pdf" download>📄 Download Resume</a>
+</header>
 
-  <footer>
-    <p>&copy; 2025 JayeshTorawane. All rights reserved.</p>
-  </footer>
+<section>
+<h2>Skills</h2>
+<div class="skills">
+  <div class="skill">Python</div>
+  <div class="skill">Java</div>
+  <div class="skill">C++ (Basic)</div>
+  <div class="skill">HTML</div>
+  <div class="skill">CSS</div>
+  <div class="skill">JavaScript</div>
+  <div class="skill">SQL</div>
+  <div class="skill">PostgreSQL</div>
+  <div class="skill">Data Science (Beginner)</div>
+  <div class="skill">AI Basics</div>
+  <div class="skill">MS Word</div>
+  <div class="skill">MS Excel</div>
+</div>
+</section>
+
+<section>
+<h2>Projects</h2>
+<div class="projects">
+
+<div class="project">
+<h3><a href="https://github.com/TorawaneJayesh">Digital Toss</a></h3>
+<p>Python based coin toss simulation tool.</p>
+</div>
+
+<div class="project">
+<h3><a href="https://github.com/TorawaneJayesh">Lucky Cards Game</a></h3>
+<p>Fun card game using Python logic.</p>
+</div>
+
+<div class="project">
+<h3><a href="https://github.com/TorawaneJayesh">Number Guess Game</a></h3>
+<p>Game demonstrating loops and conditions.</p>
+</div>
+
+<div class="project">
+<h3><a href="https://github.com/TorawaneJayesh">To-Do List</a></h3>
+<p>Simple task management application.</p>
+</div>
+
+</div>
+</section>
+
+<section class="contact">
+<h2>Contact</h2>
+<p>📧 Email: torawanejayesh77@gmail.com</p>
+<p>💻 GitHub: github.com/TorawaneJayesh</p>
+<p>🔗 LinkedIn: Jayesh Torawane</p>
+</section>
+
+<footer>
+© 2025 Jayesh Torawane
+</footer>
+
+<script>
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
 </body>
 </html>

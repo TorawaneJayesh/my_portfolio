@@ -29,11 +29,48 @@
   --light:#1f4d68;
 }
 
+body.dark{
+  --bg:#000000;
+  --card:#111111;
+  --text:#ffffff;
+  --accent:#00e5ff;
+}
+
+body.light{
+  --bg:#f5f5f5;
+  --card:#ffffff;
+  --text:#111111;
+  --accent:#0077ff;
+}
+
 body{
   font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#081b29,#112e42,#0a192f);
+  background:
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  url('background.jpg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
   color:var(--text);
   overflow-x:hidden;
+}
+
+/* NAV THEME BUTTON */
+
+.nav-theme-btn{
+  padding:10px 18px;
+  border:none;
+  border-radius:30px;
+  background:var(--accent);
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.4s;
+}
+
+.nav-theme-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 15px rgba(0,171,240,0.5);
 }
 
 /* NAVBAR */
@@ -440,6 +477,13 @@ footer{
   <li><a href="#skills">Skills</a></li>
   <li><a href="#projects">Projects</a></li>
   <li><a href="#contact">Contact</a></li>
+
+<li>
+<button class="nav-theme-btn" onclick="toggleTheme()">
+🌙 Theme
+</button>
+</li>
+
 </ul>
 
 </nav>
@@ -472,6 +516,10 @@ View Projects
 </a>
 
 <a href="Jayesh_Torawane_resume.pdf" class="btn secondary" target="_blank">
+View Resume
+</a>
+
+<a href="Jayesh_Torawane_resume.pdf" class="btn primary" download>
 Download Resume
 </a>
 
@@ -693,7 +741,7 @@ github.com/TorawaneJayesh
 <h3>LinkedIn</h3>
 
 <p>
-<a href="#">
+<a href="https://www.linkedin.com/in/jayesh-torawane-122612340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
 Jayesh Torawane
 </a>
 </p>
@@ -713,6 +761,26 @@ Jayesh Torawane
 </p>
 
 </footer>
+
+
+
+<script>
+
+function toggleTheme(){
+
+  if(document.body.classList.contains('light')){
+
+    document.body.classList.remove('light');
+    document.body.classList.add('dark');
+
+  }else{
+
+    document.body.classList.remove('dark');
+    document.body.classList.add('light');
+  }
+}
+
+</script>
 
 </body>
 </html>
